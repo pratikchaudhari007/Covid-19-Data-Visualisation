@@ -1,0 +1,131 @@
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Covid-19 India</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<meta name="theme-color" content="#563d7c">
+
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.4/examples/pricing/pricing.css" rel="stylesheet">
+  </head>
+
+
+  <body style="background-color:#343a40;">
+    <div class="pricing-header px-3 py-3 pt-md-2 pb-md-4 mx-auto text-center">
+      <br>
+      <h1 class="display-4 text-white"><a href="/">Corona Live Statistics</a></h1>
+      <div class="spinner-grow text-danger" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    </div>
+    <div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><a href="/index1">Maharashtra</a></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{total_maharashtra}} </h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Active : {{active_maharashtra}}</li>
+              <li>Recovered : {{recovered_maharashtra}}</li>
+              <li>Dead : {{dead_maharashtra}}</li>
+            </ul>
+    
+          </div>
+        </div>
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><a href="/india">India</a></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{total_india}}</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Active : {{active_india}}</li>
+              <li>Recovered : {{recovered_india}}</li>
+              <li>Dead : {{dead_india}}</li>
+            </ul>
+    
+          </div>
+        </div>
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><a href="/world">World</a></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{total_world}}</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Active : {{world_active_cases}}</li>
+              <li>Recovered : {{total_world_recovered}}</li>
+              <li>Dead : {{total_world_death}}</li>
+            </ul>
+    
+          </div>
+        </div>
+      </div>
+   
+
+    <div >
+      <br>
+        <br>
+        <img src="{% static 'graphs/top.png'%} " width="940" height="600">
+        <br><b style="color: white; font-size: 25px;">Top 10 States of India With maximun number of Confirmed Cases.
+        <br >  Maharashtra being the most contaminated state followed by Karnataka and Andhra Pradesh with approximately equal cases.</b>
+        <br>
+
+      </div>
+
+
+      <div>
+        <br>
+        <br>
+        <img src="{% static 'graphs/increasing trend.png'%} " width="940" height="600" >
+        <br><b style="font-size: 25px; color: white; align-items: center;">The above is initial graph showing the increasing trend and seasonality in the data.</b>
+        <br>
+      </div>
+
+      <div>
+        <br>
+        <br><b style="font-size: 25px; color: white; align-items: center;">
+            Now lets plot the Decomposition Plot which shows :
+            
+                <br>1. orignal data
+                <br>2. Trend in the data
+                <br>3. Seasonality
+                <br>4. Residual
+            
+            </b>
+        <img src="{% static 'graphs/time series.png'%}" width="940" height="600" >
+        <br>
+      </div>
+
+      <div>
+        <br>
+        <img src="{% static 'graphs/predicted trends.png'%} " width="940" height="600">
+        <br><b style="font-size: 25px; color: white; align-items: center;">The above Graph showing predicted trends for the next 50 steps for Maharashtra.</b>
+      </div>
+      <br>
+      <div >
+        <br>
+        <img src="{% static 'graphs/monthly graph.png'%}" width="940" height="600">
+        <br><b style="font-size: 25px; color: white; align-items: center;">The above Graph showing predicted trends for the next 10 months for Maharashtra.</b>
+        <br>
+      </div>
+</body>
+</html>

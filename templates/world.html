@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Covid-19 India</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<meta name="theme-color" content="#563d7c">
+<style>
+    .dropbtn {
+      background-color: #3498DB;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropbtn:hover, .dropbtn:focus {
+      background-color: #2980B9;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 100px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown a:hover {background-color: #ddd;}
+    
+    .show {display: block;}
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.4/examples/pricing/pricing.css" rel="stylesheet">
+  </head>
+
+
+  <body style="background-color:#343a40;">
+
+    {% load static %}
+<div class="pricing-header px-3 py-3 pt-md-2 pb-md-4 mx-auto text-center">
+  <br>
+  <h1 class="display-4 text-white"><a href="/">Corona Live Statistics</a></h1>
+  <div class="spinner-grow text-danger" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal"><a href="/index1">Maharashtra</a></h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{total_maharashtra}} </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Active : {{active_maharashtra}}</li>
+          <li>Recovered : {{recovered_maharashtra}}</li>
+          <li>Dead : {{dead_maharashtra}}</li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal"><a href="/india">India</a></h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{total_india}}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Active : {{active_india}}</li>
+          <li>Recovered : {{recovered_india}}</li>
+          <li>Dead : {{dead_india}}</li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal"><a href="/world">World</a></h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{total_world}}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Active : {{world_active_cases}}</li>
+          <li>Recovered : {{total_world_recovered}}</li>
+          <li>Dead : {{total_world_death}}</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="/us">US</a>
+        <a href="/russia">Russia</a>
+        <a href="/ind">India</a>
+        <a href="/brazil">Brazil</a>
+        <a href="/sa">South Africa</a>
+        <a href="/china">China</a>
+        <a href="/italy">Italy</a>
+        <a href="/germany">Germany</a>
+        <a href="/spain">Spain</a>
+        <a href="/france">France</a>
+        
+      </div>
+    </div>
+
+    <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+  <div >
+    <img src="{% static 'graphs/world_daily_increases_in_confirmed_cases.png'%}" width="940" height="600">
+  <br>
+  <br>
+  <br>
+    </div>
+    <div >
+    <img src="{% static 'graphs/world_daily_increases_in_confirmed_deaths.png'%}" width="940" height="600">
+  <br>
+  <br>
+  <br>
+
+    </div>
+    <div >
+    <img src="{% static 'graphs/world_daily_increases_in_confirmed_recoveries.png'%}" width="940" height="600">
+    <br>
+    <br>
+    <br>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
